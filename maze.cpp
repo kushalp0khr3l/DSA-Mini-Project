@@ -11,8 +11,8 @@
 
 using namespace std;
 
-// --- Data Structure Step: Custom Stack Implementation ---
-// To fulfill the requirement of using a data structure like a Stack/Linked List.
+
+
 template <typename T>
 class Node {
 public:
@@ -65,7 +65,7 @@ public:
     }
 };
 
-// --- Maze Representation ---
+// Maze Representation 
 struct Point {
     int x, y;
     bool operator==(const Point& other) const {
@@ -79,6 +79,7 @@ private:
     vector<vector<char>> grid;
     Point start, end;
 
+    // Directions: Up, Right, Down, Left
     // Directions: Up, Right, Down, Left
     int dx[4] = {-1, 0, 1, 0};
     int dy[4] = {0, 1, 0, -1};
@@ -99,7 +100,7 @@ public:
     }
 
     void display(Point current) {
-        // Clear console (Windows specific, use "clear" for Linux/Mac)
+        
         system("cls"); 
         
         cout << "--- Maze Solver Visualization ---" << endl;
@@ -109,7 +110,7 @@ public:
         for (int i = 0; i < rows; ++i) {
             for (int j = 0; j < cols; ++j) {
                 if (i == current.x && j == current.y) {
-                    cout << "* "; // Current solver position
+                    cout << "* ";
                 } else if (grid[i][j] == '#') {
                     cout << (char)219 << (char)219; // Block character for wall
                 } else if (grid[i][j] == '.') {
@@ -185,7 +186,7 @@ private:
 
 public:
     MazeGenerator(int r, int c) {
-        // Ensure odd dimensions for better maze layout
+        
         rows = (r % 2 == 0) ? r + 1 : r;
         cols = (c % 2 == 0) ? c + 1 : c;
         grid.resize(rows, string(cols, '#'));
@@ -291,7 +292,7 @@ int main() {
     ms.setMaze(mazeData);
     
     cout << "Press Enter to start solving..." << endl;
-    cin.ignore(); // Clear newline from previous cin
+    cin.ignore(); 
     cin.get();
     
     ms.solve();
