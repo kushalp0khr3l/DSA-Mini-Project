@@ -238,6 +238,7 @@ public:
 
 int main() {
     int choice;
+    int exit;
     vector<string> mazeData;
     int rows, cols;
 
@@ -296,6 +297,7 @@ int main() {
     cin.get();
     
     ms.solve();
+    cin.get();
 
     return 0;
 }
