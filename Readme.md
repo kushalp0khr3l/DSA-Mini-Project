@@ -40,6 +40,6 @@ The `MazeSolver` uses **Depth-First Search (DFS)**:
     * *Note: For Linux/macOS, change `system("cls")` to `system("clear")` in the `display` function.*
 
 ### Compilation
-```bash
-g++ -o maze_app maze.cpp
+```Terminal
+g++ maze.cpp -static -o maze
 ```
